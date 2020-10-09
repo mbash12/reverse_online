@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demonstration Video</title>
+    <link rel="shortcut icon" href="#" />
+    <style>
+      html,
+      body,
+      video {
+        padding: 0px;
+        margin: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="vd" controls disablePictureInPicture>
+      <source src="" type="video/mp4" />
+    </video>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(
+          /[?&]+([^=&]+)=([^&]*)/gi,
+          function (m, key, value) {
+            vars[key] = value;
+          }
+        );
+        return vars;
+      }
+
+      $(document).ready(function () {
+        let video = getUrlVars()["video"];
+        $("#vd").attr("src", video);
+      });
+    </script>
+  </body>
+</html>

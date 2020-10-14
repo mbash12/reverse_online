@@ -179,6 +179,7 @@ function videoBtn() {
   // }
 }
 function close() {
+  console.log("yo");
   $("#modal").hide();
   $("#modal video").attr("src", "");
   $("#modal iframe").attr("src", "");
@@ -200,6 +201,9 @@ function load() {
   var v1 = document.getElementById("voiceover");
   $("#volume").val(v1.volume * 100);
   $("#uv").hide();
+  $("#close").click(() => {
+    close();
+  });
 }
 
 function changeSlide() {
@@ -288,9 +292,13 @@ function changeSlide() {
     transition = slide.entryTransition;
   }
   $(".youtube-info").hide();
+  $(".youtube-nav").hide();
+  $("#bottombar").show();
   if (type === "youtube") {
     content = `<div  class="${transition}"><iframe id="yt" style="width:100%;height:100%" src="${slide.content}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
     $(".youtube-info").show().delay(3000).fadeOut();
+    $(".youtube-nav").show();
+    $("#bottombar").hide();
   } else if (type === "video") {
     content = `<div  class="${transition}"><video id="vid" disablePictureInPicture ><source src="${ptth}${slide.content}" type="video/mp4"></video></div>`;
   } else if (type === "image") {

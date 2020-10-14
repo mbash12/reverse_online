@@ -1,347 +1,354 @@
 {
-    "data": {
-        "title":"",
-        "pdf":"../sharedcontent/lessonplans/Drumatic.pdf",
-        "vsource":"",
-        "video":"../sharedcontent/video/intro.mp4",
-        "autoplay":false,
-        "slides":[
-            {
-                "type":"video",
-                "duration":"00:16:00",
-                "content":"../sharedcontent/video/intro.mp4",
-                "voiceover":"",
-                "background-color":"blacks"
-            },
-            {
-                "type":"video",
-                "duration":"00:23:00",
-                "content":"media/lo.mp4",
-                "voiceover":"",
-                "background-color":"#054fb3"
-            },
-            {
-                "type":"video",
-                "duration":"00:12:00",
-                "content":"media/skilltoolbox.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"00:20:00",
-                "content":"media/scriteria.jpg",
-                "voiceover":"media/scriteria.mp3",
-                "background-color":"white"
-            },
-            {
-                "type":"image", 
-                "duration":"00:6:00",
-                "content":"/lesson/opendrummachine.jpg",
-                "voiceover":"Vover/dm.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"video",
-                "duration":"00:06:00",
-                "content":"../sharedcontent/invideo/sdmachine.mp4",
-                "voiceover":"",
-                "background-color":"black" 
-            },
-            {
-                "type":"image",
-                "duration":"00:08:00",
-                "content":"lesson/dmprojectwindow.jpg",
-                "voiceover":"Vover/dm2.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"video",
-                "duration":"00:10:00",
-                "content":"../sharedcontent/invideo/Checksounds.mp4",
-                "voiceover":"Vover/checksounds.mp3",
-                "background-color":"black" 
-            },
-            {
-                "type":"image",
-                "duration":"00:10:00",
-                "content":"lesson/5.jpg",
-                "voiceover":"Vover/v2.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"00:10:00",
-                "content":"lesson/6.jpg",
-                "voiceover":"Vover/v3.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"00:03:00",
-                "content":"lesson/7.jpg",
-                "voiceover":"Vover/v4.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"image",
-                "duration":"00:10:00    ",
-                "content":"lesson/8.jpg",
-                "voiceover":"Vover/v5.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"00:10:00",
-                "content":"lesson/clearsounds.jpg",
-                "voiceover":"Vover/howclearsounds.mp3",
-                "background-color":"#004aad"  
-            },
-            {
-                "type":"video",
-                "duration":"00:10:00",
-                "content":"../sharedcontent/invideo/Clearsounds.mp4",
-                "voiceover":"",
-                "background-color":"black" 
-            },
-            {
-                "type":"image",
-                "duration":"00:29:00",
-                "content":"lesson/11.jpg",
-                "voiceover":"lesson/bassdrum.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"video",
-                "duration":"00:05:00",
-                "content":"lesson/drum.mp4",
-                "voiceover":"lesson/drum.mp3",
-                "background-color":"black" 
-            },
-            {
-                "type":"image",
-                "duration":"00:20:00",
-                "content":"lesson/12.jpg",
-                "voiceover":"Vover/st1st2.mp3",
-                "background-color":"#004aad" 
-            },
-            {
-                "type":"video",
-                "duration":"00:14:00",
-                "content":"../sharedcontent/invideo/basshihat.mp4",
-                "voiceover":"",
-                "background-color":"black"      
-            },
-            {
-                "type":"image",
-                "duration":"00:25:00",
-                "content":"lesson/13.jpg",
-                "voiceover":"Vover/onandoffbeat.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"00:06:00",
-                "content":"lesson/explain.jpg",
-                "voiceover":"Vover/explain.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"00:35:00",
-                "content":"lesson/15.jpg",
-                "voiceover":"Vover/openhihat.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"lesson/16.jpg",
-                "voiceover":"Vover/rimshot.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"video",
-                "duration":"00:11:00",
-                "content":"../sharedcontent/invideo/basshihatrim.mp4",
-                "voiceover":"delete Vover/rimshotvideo.mp3",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"00:14:00",
-                "content":"lesson/17.jpg",
-                "voiceover":"Vover/clap.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"video",
-                "duration":"00:20:00",
-                "content":"../sharedcontent/invideo/clapsound.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"video",
-                "duration":"00:10:00",
-                "content":"../sharedcontent/invideo/tweak.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"lesson/18.jpg",
-                "voiceover":"Vover/chsounds.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"video",
-                "duration":"00:07:00",
-                "content":"../sharedcontent/invideo/drumkitchoice.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"00:16:00",
-                "content":"lesson/19.jpg",
-                "voiceover":"Vover/8patterns.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"video",
-                "duration":"00:11:00",
-                "content":"../sharedcontent/invideo/addtoarrange.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"image",
-                "duration":"00:16:00",
-                "content":"lesson/20.jpg",
-                "voiceover":"Vover/2ndpattern.mp3",
-                "background-color":"#004aad"
-            },
-            {
-                "type":"video",
-                "duration":"00:26:00",
-                "content":"../sharedcontent/video/example.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {
-                "type":"video",
-                "duration":"00:38:00",
-                "content":"../sharedcontent/video/liveexample.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {         
-                "type":"video",
-                "duration":"00:05:00",
-                "content":"../sharedcontent/video/quiz.mp4",
-                "voiceover":"../sharedcontent/quiz/letssee.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"/quiz/1.jpg",
-                "voiceover":"/vo/vo1.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"/quiz/2.jpg",
-                "voiceover":"/vo/vo1.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:04:00",
-                "content":"/quiz/3.jpg",
-                "voiceover":"/vo/vo2.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"/quiz/4.jpg",
-                "voiceover":"/vo/vo3.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"/quiz/5.jpg",
-                "voiceover":"/vo/vo4.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"",
-                "content":"/quiz/6.jpg",
-                "voiceover":"/vo/vo5.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:05:00",
-                "content":"/quiz/7.jpg",
-                "voiceover":"/vo/vo6.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:15:00",
-                "content":"/quiz/8.jpg",
-                "voiceover":"/vo/vo7.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"",
-                "content":"/quiz/9.jpg",
-                "voiceover":"/vo/vo8.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"",
-                "content":"/quiz/12.jpg",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {        
-                "type":"video",
-                "duration":"00:07:00",
-                "content":"/quiz/quiz.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:07:00",
-                "content":"/quiz/10.jpg",
-                "voiceover":"/vo/vo9.mp3",
-                "background-color":"black"
-            },
-            {        
-                "type":"image",
-                "duration":"00:07:00",
-                "content":"/quiz/11.jpg",
-                "voiceover":"/vo/v10.mp3",
-                "background-color":"black"
-            },
-            {
-                "type":"video",
-                "duration":"00:02:00",
-                "content":"../sharedcontent/video/outro.mp4",
-                "voiceover":"",
-                "background-color":"black"
-            }
-        ]
-    }
+  "data": {
+    "title": "",
+    "pdf": "../sharedcontent/lessonplans/Drumatic.pdf",
+    "vsource": "",
+    "video": "../sharedcontent/video/intro.mp4",
+    "autoplay": false,
+    "slides": [
+      {
+        "type": "youtube",
+        "duration": "00:00:00",
+        "content": "https://www.youtube.com/embed/p_fiwjzOAa8",
+        "voiceover": "",
+        "background-color": "blacks"
+      },
+      {
+        "type": "video",
+        "duration": "00:16:00",
+        "content": "../sharedcontent/video/intro.mp4",
+        "voiceover": "",
+        "background-color": "blacks"
+      },
+      {
+        "type": "video",
+        "duration": "00:23:00",
+        "content": "media/lo.mp4",
+        "voiceover": "",
+        "background-color": "#054fb3"
+      },
+      {
+        "type": "video",
+        "duration": "00:12:00",
+        "content": "media/skilltoolbox.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:20:00",
+        "content": "media/scriteria.jpg",
+        "voiceover": "media/scriteria.mp3",
+        "background-color": "white"
+      },
+      {
+        "type": "image",
+        "duration": "00:6:00",
+        "content": "/lesson/opendrummachine.jpg",
+        "voiceover": "Vover/dm.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:06:00",
+        "content": "../sharedcontent/invideo/sdmachine.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:08:00",
+        "content": "lesson/dmprojectwindow.jpg",
+        "voiceover": "Vover/dm2.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:10:00",
+        "content": "../sharedcontent/invideo/Checksounds.mp4",
+        "voiceover": "Vover/checksounds.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:10:00",
+        "content": "lesson/5.jpg",
+        "voiceover": "Vover/v2.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:10:00",
+        "content": "lesson/6.jpg",
+        "voiceover": "Vover/v3.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:03:00",
+        "content": "lesson/7.jpg",
+        "voiceover": "Vover/v4.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:10:00    ",
+        "content": "lesson/8.jpg",
+        "voiceover": "Vover/v5.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:10:00",
+        "content": "lesson/clearsounds.jpg",
+        "voiceover": "Vover/howclearsounds.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:10:00",
+        "content": "../sharedcontent/invideo/Clearsounds.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:29:00",
+        "content": "lesson/11.jpg",
+        "voiceover": "lesson/bassdrum.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:05:00",
+        "content": "lesson/drum.mp4",
+        "voiceover": "lesson/drum.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:20:00",
+        "content": "lesson/12.jpg",
+        "voiceover": "Vover/st1st2.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:14:00",
+        "content": "../sharedcontent/invideo/basshihat.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:25:00",
+        "content": "lesson/13.jpg",
+        "voiceover": "Vover/onandoffbeat.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:06:00",
+        "content": "lesson/explain.jpg",
+        "voiceover": "Vover/explain.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:35:00",
+        "content": "lesson/15.jpg",
+        "voiceover": "Vover/openhihat.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "lesson/16.jpg",
+        "voiceover": "Vover/rimshot.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:11:00",
+        "content": "../sharedcontent/invideo/basshihatrim.mp4",
+        "voiceover": "delete Vover/rimshotvideo.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:14:00",
+        "content": "lesson/17.jpg",
+        "voiceover": "Vover/clap.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:20:00",
+        "content": "../sharedcontent/invideo/clapsound.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "video",
+        "duration": "00:10:00",
+        "content": "../sharedcontent/invideo/tweak.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "lesson/18.jpg",
+        "voiceover": "Vover/chsounds.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:07:00",
+        "content": "../sharedcontent/invideo/drumkitchoice.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:16:00",
+        "content": "lesson/19.jpg",
+        "voiceover": "Vover/8patterns.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:11:00",
+        "content": "../sharedcontent/invideo/addtoarrange.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:16:00",
+        "content": "lesson/20.jpg",
+        "voiceover": "Vover/2ndpattern.mp3",
+        "background-color": "#004aad"
+      },
+      {
+        "type": "video",
+        "duration": "00:26:00",
+        "content": "../sharedcontent/video/example.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "video",
+        "duration": "00:38:00",
+        "content": "../sharedcontent/video/liveexample.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "video",
+        "duration": "00:05:00",
+        "content": "../sharedcontent/video/quiz.mp4",
+        "voiceover": "../sharedcontent/quiz/letssee.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "/quiz/1.jpg",
+        "voiceover": "/vo/vo1.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "/quiz/2.jpg",
+        "voiceover": "/vo/vo1.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:04:00",
+        "content": "/quiz/3.jpg",
+        "voiceover": "/vo/vo2.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "/quiz/4.jpg",
+        "voiceover": "/vo/vo3.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "/quiz/5.jpg",
+        "voiceover": "/vo/vo4.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "/quiz/6.jpg",
+        "voiceover": "/vo/vo5.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:05:00",
+        "content": "/quiz/7.jpg",
+        "voiceover": "/vo/vo6.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:15:00",
+        "content": "/quiz/8.jpg",
+        "voiceover": "/vo/vo7.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "/quiz/9.jpg",
+        "voiceover": "/vo/vo8.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "",
+        "content": "/quiz/12.jpg",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "video",
+        "duration": "00:07:00",
+        "content": "/quiz/quiz.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:07:00",
+        "content": "/quiz/10.jpg",
+        "voiceover": "/vo/vo9.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "image",
+        "duration": "00:07:00",
+        "content": "/quiz/11.jpg",
+        "voiceover": "/vo/v10.mp3",
+        "background-color": "black"
+      },
+      {
+        "type": "video",
+        "duration": "00:02:00",
+        "content": "../sharedcontent/video/outro.mp4",
+        "voiceover": "",
+        "background-color": "black"
+      }
+    ]
+  }
 }

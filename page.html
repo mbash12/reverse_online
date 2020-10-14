@@ -69,21 +69,12 @@
       }
 
       $(document).ready(function () {
-        let iframe = getUrlVars()["iframe"];
+        let iframe = decodeURIComponent(getUrlVars()["iframe"]);
+        console.log(iframe);
         $("#vd").attr("src", iframe);
       });
       function back() {
         window.location.href = "index.html?m=" + getUrlVars()["m"];
-      }
-      function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(
-          /[?&]+([^=&]+)=([^&]*)/gi,
-          function (m, key, value) {
-            vars[key] = value;
-          }
-        );
-        return vars;
       }
     </script>
   </body>

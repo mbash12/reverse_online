@@ -48,6 +48,26 @@
       #bottombar.onplay:hover {
         opacity: 1;
       }
+      .youtube-nav {
+        display: flex;
+        width: 100%;
+        top: 50%;
+        left: 0px;
+        position: fixed;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        padding: 0px 30px;
+      }
+      .youtube-nav button {
+        display: flex;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
 
@@ -117,7 +137,7 @@
               >
                 <img
                   src="assets/icons/ic_volume_up_48px.svg"
-                  style="width: 28px"
+                  style="height: 30px"
                 /><input
                   type="range"
                   min="1"
@@ -155,12 +175,21 @@
         <div id="leftbar"></div>
       </div>
     </div>
+    <div class="youtube-nav">
+      <button class="" id="" onclick="prev()" type="button">
+        <img src="assets/icons/ic_skip_previous_48px.svg" />
+      </button>
+      <button class="" id="" onclick="next()" type="button">
+        <img src="assets/icons/ic_skip_next_48px.svg" />
+      </button>
+    </div>
     <div class="youtube-info">Use the Youtube navigation</div>
     <div id="modal">
       <div class="content">
-        <a href="javascript:close()" id="close"
-          ><i class="fa fa-times-circle"></i
-        ></a>
+        <button onClick="close()" id="close">
+          <i class="fa fa-times-circle"></i>
+        </button>
+
         <div id="video">
           <iframe
             id="ol"

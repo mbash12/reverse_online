@@ -1,32 +1,32 @@
 [
-    {
+  {
     "type": "page",
     "name": "Information For Teachers",
     "url": "settings/infoforteacher.html"
-    },
-    {
-        "name":"Lesson 1 - Drumatic!",
-        "url":"1.drumatic",
-        "type":"slides"
-    },
-    {
-        "name":"Lesson 2 - Looptastic",
-        "url":"2.looptastic",
-        "type":"slides"
-    },
-    {
-        "name":"Lesson 3 - It's As Easy As ABC",
-        "url":"3.abc",
-        "type":"slides"
-    },
-    {
-        "name":"Lesson 4 - It's As Easy As ABC Contd...(coming soon)",
-        "url":"",
-        "type":"slides"
-    },
-    {
-        "name":"Lesson 4 - Using a Photo Stimulus (coming soon)",
-        "url":"2.looptastic",
-        "type":"slides"
-    }
+  },
+  {
+    "name": "Lesson 1 - Drumatic!",
+    "url": "1.drumatic",
+    "type": "slides"
+  },
+  {
+    "name": "the_journeys_over",
+    "url": "the_journeys_over",
+    "type": "lyrics"
+  },
+  {
+    "name": "Lesson 3 - It's As Easy As ABC",
+    "url": "3.abc",
+    "type": "slides"
+  },
+  {
+    "name": "Lesson 4 - It's As Easy As ABC Contd...(coming soon)",
+    "url": "",
+    "type": "slides"
+  },
+  {
+    "name": "Lesson 4 - Using a Photo Stimulus (coming soon)",
+    "url": "2.looptastic",
+    "type": "slides"
+  }
 ]

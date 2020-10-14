@@ -2,6 +2,14 @@
   font-family: KGCorneroftheSky;
   src: url(Fonts/KGCorneroftheSky.ttf);
 }
+@font-face {
+  font-family: LeagueSpartan;
+  src: url(Fonts/LeagueSpartan-Bold.otf);
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(Fonts/OpenSans-Regular.ttf);
+}
 html,
 body {
   width: 100%;
@@ -13,7 +21,7 @@ body {
 
 body {
   margin: 0px;
-  font-family: KGCorneroftheSky;
+  font-family: OpenSans;
 }
 .big {
   font-size: 12vh;

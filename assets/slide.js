@@ -19,123 +19,133 @@ $(document).ready(function () {
   pathh = path + "songlist/" + presentation; //+ "/";
 
   $.getJSON(path + "songlist/" + presentation + "slides.json", function (json) {
-    slides = json;
+    slides = json.data;
+
+    $("body").css({ "font-family": json.font });
     preloadResources(slides);
-    // load();
+    load();
   });
-  // setTimeout(() => {
-  //   $("#loading").hide();
-  // }, 500);
-  // $("#page").show();
 });
 
 function preloadResources(slides) {
-  let resources = [];
-  let resources1 = [];
-  slides.data.slides.forEach((element) => {
-    if (element.content.substring(0, 4) == "http") {
-      if (element.voiceover !== "") {
-        resources.push({
-          uri: element.voiceover,
-          type: "audio",
-        });
-      }
-      switch (element.type) {
-        case "image":
-          resources.push({
-            uri: element.content,
-            type: "img",
-          });
-          break;
-        case "video":
-          resources.push({
-            uri: element.content,
-            type: "video",
-          });
-          break;
-
-        default:
-          break;
-      }
-    }
-    if (element.content.substring(0, 4) !== "http") {
-      if (element.voiceover !== "") {
-        resources.push({
-          uri: path + "songlist/" + presentation + element.voiceover,
-          type: "audio",
-        });
-      }
-      switch (element.type) {
-        case "image":
-          resources.push({
-            uri: path + "songlist/" + presentation + element.content,
-            type: "img",
-          });
-          break;
-        case "video":
-          resources.push({
-            uri: path + "songlist/" + presentation + element.content,
-            type: "video",
-          });
-          break;
-
-        default:
-          break;
-      }
-    }
-  });
-  startloadResources(resources).then((result) => {
+  startloadResources(slides).then((s) => {
+    // runScript();
     let loaded = 0;
-    let assets = document.querySelectorAll(".preload").length;
-    $(".preload")
-      .on("load", function () {
+    let assets = document.querySelectorAll(".slid");
+    let vo = document.querySelectorAll(".vo");
+
+    // console.log($(".slid"));
+    let res = [];
+    assets.forEach((e) => {
+      let x = e.querySelector("video") != null;
+      let y = e.querySelector("img") != null;
+      if (x) {
+        res.push(e.querySelector("video"));
+      }
+      if (y) {
+        res.push(e.querySelector("img"));
+      }
+    });
+    vo.forEach((e) => {
+      res.push(e);
+    });
+    res.forEach((e) => {
+      e.load();
+      if (e.tagName == "VIDEO") {
+        e.addEventListener("canplaythrough", () => {
+          loaded += 1;
+          $("#prog").html(Math.floor((loaded / res.length) * 100));
+          if (loaded == res.length) runScript();
+        });
+      }
+      // if (e.tagName == "IMG") {
+      //   e.addEventListener("load", () => {
+      //     loaded += 1;
+      //     $("#prog").html(Math.floor((loaded / res.length) * 100));
+      //     if (loaded == res.length) runScript();
+      //   });
+      // }
+      if (e.tagName == "AUDIO") {
+        e.addEventListener("canplaythrough", () => {
+          loaded += 1;
+          $("#prog").html(Math.floor((loaded / res.length) * 100));
+          if (loaded == res.length) runScript();
+        });
+      }
+      e.addEventListener("error", () => {
         loaded += 1;
-        console.log(loaded + "/" + assets);
-        $("#prog").html(Math.floor((loaded / assets) * 100));
-        if (loaded == assets) runScript();
-      })
-      .on("loadeddata", function () {
-        loaded += 1;
-        console.log(loaded + "/" + assets);
-        $("#prog").html(Math.floor((loaded / assets) * 100));
-        if (loaded == assets) runScript();
-      })
-      .on("error", function () {
-        console.log("error loading image");
-        loaded += 1;
-        console.log(loaded + "/" + assets);
-        $("#prog").html(Math.floor((loaded / assets) * 100));
-        if (loaded == assets) runScript();
+        $("#prog").html(Math.floor((loaded / res.length) * 100));
+        if (loaded == res.length) runScript();
       });
+    });
   });
 }
-function runScript() {
+async function insight() {
+  await document.querySelectorAll("video").forEach((e) => {
+    e.muted = true;
+    e.play();
+    e.addEventListener("play", function stopp() {
+      setTimeout(() => {
+        e.pause();
+        e.currentTime = 0;
+        e.muted = false;
+        e.removeEventListener("play", stopp);
+      }, 2000);
+    });
+  });
+  await document.querySelectorAll("audio").forEach((e) => {
+    e.muted = true;
+    e.play();
+    e.addEventListener("play", function stopp() {
+      setTimeout(() => {
+        e.pause();
+        e.currentTime = 0;
+        e.muted = false;
+        e.removeEventListener("play", stopp);
+      }, 2000);
+    });
+  });
+  return;
+}
+async function runScript() {
+  // await insight();
+  // setTimeout(() => {
   load();
   $("#loading").hide();
   $("#page").show();
+  // }, 2000);
 }
-async function startloadResources(resources) {
-  let preloaded = document.querySelector("#preloaded");
-  resources.forEach((t) => {
-    if ("img" === t.type) {
-      var i = document.createElement("img");
-      i.decoding && (i.decoding = "async");
-      i.className = "preload";
-      i.src = t.uri;
-      preloaded.appendChild(i);
-    } else if ("video" === t.type) {
-      var i = document.createElement("video");
-      i.src = t.uri;
-      i.className = "preload";
-      preloaded.appendChild(i);
-    } else if ("audio" === t.type) {
-      var i = document.createElement("audio");
-      i.src = t.uri;
-      i.className = "preload";
-      preloaded.appendChild(i);
+async function startloadResources(slides) {
+  let ctn = "";
+  slides.slides.forEach((e, i) => {
+    let type = e.type;
+    let transition = e.entryTransition;
+    let content = e.content;
+    if (content.substring(0, 4) !== "http") {
+      ptth = "/reverse/" + pathh;
+      // ptth = "/" + pathh;
     }
+    if (type === "youtube") {
+      content = `<div class="slid slide${i} ${transition}"><iframe style="width:100%;height:100%" src="${content}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+    } else if (type === "video") {
+      content = `<div class="slid slide${i} ${transition}"><video disablePictureInPicture preload="auto"><source src="${ptth}${content}" type="video/mp4"></video></div>`;
+    } else if (type === "image") {
+      content = `<div style="background:url('${ptth}${content}');background-size:contain;background-position:center center;background-repeat:no-repeat"  class="slid slide${i} ${transition}"/></div>`;
+    } else if (type === "text") {
+      content = `<div class="slid slide${i} ${transition}">${content}</div>`;
+    } else {
+      content = `<div class="slid slide${i} ${transition}">${content}</div>`;
+    }
+    if (e.voiceover != "") {
+      let vo = document.createElement("audio");
+      vo.src = ptth + e.voiceover;
+      vo.className = `vo vo${i}`;
+      document.querySelector("#vo").append(vo);
+    }
+    ctn = ctn + content;
+    $("#content").append(content);
   });
-  return resources;
+  return ctn;
 }
 function getUrlVars() {
   var vars = {};
@@ -152,44 +162,21 @@ function back() {
   window.location.href = "index.html?m=" + m;
 }
 
-// function pdfBtn() {
-//   pauseplay();
-//   console.log(slides["data"]["pdf"]);
-//   // window.open(slides["data"]["pdf"], "_blank", "nodeIntegration=yes");
-// }
-// function videoBtn() {
-//   pauseplay();
-//   window.open(
-//     "videoDemo.html?video=" + pathh + slides["data"]["video"],
-//     "_blank",
-//     "nodeIntegration=yes"
-//   );
-// }
 function videoBtn() {
-  //   console.log("a");
-
-  // if(lyrics["data"]["vsource"] == "online"){
-  //     $("#modal iframe").attr('src', lyrics["data"]["video"]);
-  //     $("#modal video").hide();
-  // }else{
   $("#modal iframe").hide();
-  $("#modal video").attr("src", pathh + slides["data"]["video"]);
+  $("#modal video").attr("src", pathh + slides["video"]);
   $("#modal").show();
   document.getElementById("lc").play();
-  // }
 }
 function close() {
-  console.log("yo");
   $("#modal").hide();
   $("#modal video").attr("src", "");
   $("#modal iframe").attr("src", "");
-  // var vid = document.getElementById("lc");
-  // vid.pause();
 }
 
 function load() {
-  slides1 = slides.data.slides;
-  playing = slides.data.autoplay;
+  slides1 = slides.slides;
+  playing = slides.autoplay;
   if (playing == true) {
     $("#ps").show();
     $("#pl").hide();
@@ -198,8 +185,18 @@ function load() {
     $("#pl").show();
   }
   changeSlide();
-  var v1 = document.getElementById("voiceover");
-  $("#volume").val(v1.volume * 100);
+  // var v1 = document.getElementById("voiceover");
+
+  $("#volume").val(60);
+  var v = $("#volume").val();
+  var v1 = document.querySelectorAll("audio");
+  v1.forEach((e) => {
+    e.volume = v / 100;
+  });
+  var v2 = document.querySelectorAll("video");
+  v2.forEach((e) => {
+    e.volume = v / 100;
+  });
   $("#uv").hide();
   $("#close").click(() => {
     close();
@@ -207,6 +204,13 @@ function load() {
 }
 
 function changeSlide() {
+  // console.log(current);
+  if ($(".active video").length > 0) {
+    $(".active video").get(0).currentTime = 0;
+  }
+  if ($(".vo" + current).length > 0) {
+    $(".vo" + current).get(0).currentTime = 0;
+  }
   let slide = slides1[current];
   let type = slide.type;
   let content;
@@ -222,8 +226,11 @@ function changeSlide() {
   curretduration = p;
   $("#duration").html(pxc);
   voiceDuration = p;
-
-  if (slides.data.pdf === "") {
+  $(".slid").removeClass("active");
+  $(".slid").hide();
+  $(".slide" + current).show();
+  $(".slide" + current).addClass("active");
+  if (slides.pdf === "") {
     $("#pd").prop("disabled", true);
     $("#pd").css({ opacity: 0.5 });
   } else {
@@ -231,7 +238,7 @@ function changeSlide() {
     $("#pd").css({ opacity: 1 });
   }
 
-  if (slides.data.video === "") {
+  if (slides.video === "") {
     $("#vd").hide();
   } else {
     $("#vd").show();
@@ -295,34 +302,21 @@ function changeSlide() {
   $(".youtube-nav").hide();
   $("#bottombar").show();
   if (type === "youtube") {
-    content = `<div  class="${transition}"><iframe id="yt" style="width:100%;height:100%" src="${slide.content}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
     $(".youtube-info").show().delay(3000).fadeOut();
     $(".youtube-nav").show();
     $("#bottombar").hide();
-  } else if (type === "video") {
-    content = `<div  class="${transition}"><video id="vid" disablePictureInPicture ><source src="${ptth}${slide.content}" type="video/mp4"></video></div>`;
-  } else if (type === "image") {
-    content = `<div id="img" style="background:url('${ptth}${slide.content}');background-size:contain;background-position:center center;background-repeat:no-repeat"  class="${transition}"/></div>`;
-  } else if (type === "text") {
-    content = `<div id="text"  class="${transition}">${slide.content}</div>`;
-  } else {
-    content = `<div id="html"  class="${transition}">${slide.content}</div>`;
   }
-  $("#content").html(content);
   if (slide["background-color"] === "") {
     $("#content").css("background", "#FFFFFF");
   } else {
     $("#content").css("background", slide["background-color"]);
   }
-  if (slide.voiceover !== "") {
-    $("#voiceover").attr("src", ptth + slide.voiceover);
-  } else {
-    $("#voiceover").attr("src", "");
-  }
-  // if (slides1.length <= current + 1) {
-  //   playing = false;
+  // if (slide.voiceover !== "") {
+  //   $("#voiceover").attr("src", ptth + slide.voiceover);
+  // } else {
+  //   $("#voiceover").attr("src", "");
   // }
-  // console.log(playing);
+
   if (playing === true) {
     ispaused = false;
     $("#ps").show();
@@ -330,11 +324,16 @@ function changeSlide() {
     resumeCounter();
     if (slide.voiceover !== "") {
       setTimeout(() => {
-        if ($("#voiceover").attr("src") !== "") {
-          document.getElementById("voiceover").play();
+        // if ($("#voiceover").attr("src") !== "") {
+        //   document.getElementById("voiceover").play();
+        // }
+        if ($(".vo" + current).length > 0) {
+          $(".vo" + current)
+            .get(0)
+            .play();
         }
-        if ($("#vid").length > 0) {
-          document.getElementById("vid").play();
+        if ($(".active video").length > 0) {
+          $(".active video").get(0).play();
         }
       }, 1000);
     }
@@ -345,8 +344,8 @@ function changeSlide() {
 }
 function runCounter() {
   if (playing === true && curretduration >= currentime) {
-    if ($("#vid").length > 0) {
-      document.getElementById("vid").play();
+    if ($(".active video").length > 0) {
+      $(".active video").get(0).play();
     }
     myVar = setTimeout(() => {
       currentime = currentime + 0.1;
@@ -407,7 +406,7 @@ function next() {
     runCounter();
   }
   if (current < slides1.length - 1) {
-    pauseCounter();
+    pauseplay();
     current += 1;
     playing = true;
     changeSlide();
@@ -417,7 +416,7 @@ function next() {
 }
 function prev() {
   if (current > 0) {
-    pauseCounter();
+    pauseplay();
     playing = true;
     current -= 1;
     changeSlide();
@@ -434,26 +433,27 @@ function prev() {
 }
 $("#volume").on("input", function () {
   var v = $("#volume").val();
-  var v1 = document.getElementById("voiceover");
-  v1.volume = v / 100;
+  // var v1 = document.getElementById("voiceover");
+  // v1.volume = v / 100;
 
-  var v2 = document.getElementById("vid");
-  v2.volume = v / 100;
+  var v1 = document.querySelectorAll("audio");
+  v1.forEach((e) => {
+    e.volume = v / 100;
+  });
+  var v2 = document.querySelectorAll("video");
+  v2.forEach((e) => {
+    e.volume = v / 100;
+  });
 });
 function pdfBtn() {
-  //   const { BrowserWindow } = require("electron").remote;
-  //   const PDFWindow = require("gr-pdf-window");
-  //   const win = new BrowserWindow({ width: 800, height: 600 });
-  //   PDFWindow.addSupport(win);
-  //   win.loadURL(app.app.getAppPath() + "/" + pathh + slides["data"]["pdf"]);
   let p = "";
-  if (slides["data"]["pdf"].substring(0, 4) !== "http") {
+  if (slides["pdf"].substring(0, 4) !== "http") {
     p = "/reverse/" + pathh;
     // p = ptth;
   }
 
   window.open(
-    p + slides["data"]["pdf"],
+    p + slides["pdf"],
     "_blank",
     "height=570,width=520,scrollbars=yes"
   );
@@ -473,11 +473,16 @@ function resumeplay() {
   }
   resumeCounter();
 
-  if ($("#voiceover").attr("src") !== "") {
-    document.getElementById("voiceover").play();
+  // if ($("#voiceover").attr("src") !== "") {
+  //   document.getElementById("voiceover").play();
+  // }
+  if ($(".vo" + current).length > 0) {
+    $(".vo" + current)
+      .get(0)
+      .play();
   }
-  if ($("#vid").length > 0) {
-    document.getElementById("vid").play();
+  if ($(".active video").length > 0) {
+    $(".active video").get(0).play();
   }
 }
 function toggleFullScreen() {
@@ -511,11 +516,16 @@ function pauseplay() {
   $("#pl").show();
   pauseCounter();
 
-  if ($("#voiceover").attr("src") !== "") {
-    document.getElementById("voiceover").pause();
+  // if ($("#voiceover").attr("src") !== "") {
+  //   document.getElementById("voiceover").pause();
+  // }
+  if ($(".vo" + current).length > 0) {
+    $(".vo" + current)
+      .get(0)
+      .pause();
   }
-  if ($("#vid").length > 0) {
-    document.getElementById("vid").pause();
+  if ($(".active video").length > 0) {
+    $(".active video").get(0).pause();
   }
   $("#bottombar").removeClass("onplay");
 }

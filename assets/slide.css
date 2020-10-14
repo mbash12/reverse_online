@@ -1,4 +1,16 @@
 @font-face {
+  font-family: KGCorneroftheSky;
+  src: url(Fonts/KGCorneroftheSky.ttf);
+}
+@font-face {
+  font-family: LeagueSpartan;
+  src: url(Fonts/LeagueSpartan-Bold.otf);
+}
+@font-face {
+  font-family: OpenSans;
+  src: url(Fonts/OpenSans-Regular.ttf);
+}
+@font-face {
   font-family: OpenSans;
   src: url(Fonts/OpenSans-Regular.ttf);
 }
@@ -399,4 +411,8 @@ button:focus {
     padding: 60px 5px;
     width: 100%;
   }
+}
+.slid video {
+  width: 100%;
+  height: 100%;
 }

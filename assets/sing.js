@@ -74,8 +74,9 @@ function load() {
       $(".wrapper").css("background", bg);
     }
     // $(".wrapper").css('background-image','url('+path+json.graphic+')');?
-    $("#backSong").attr("src", lyrics["data"]["backsong"]);
-    $("#vocal").attr("src", lyrics["data"]["vocal"]);
+    ptth = path + "/songlist/" + song;
+    $("#backSong").attr("src", ptth + lyrics["data"]["backsong"]);
+    $("#vocal").attr("src", ptth + lyrics["data"]["vocal"]);
     if (lyrics["data"]["vsource"] === undefined) {
       $("#vd").hide();
     } else {

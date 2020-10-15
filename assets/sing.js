@@ -75,8 +75,13 @@ function load() {
     }
     // $(".wrapper").css('background-image','url('+path+json.graphic+')');?
     ptth = path + "/songlist/" + song;
-    $("#backSong").attr("src", ptth + lyrics["data"]["backsong"]);
-    $("#vocal").attr("src", ptth + lyrics["data"]["vocal"]);
+    let p = "";
+    if (lyrics["data"]["backsong"].substring(0, 4) !== "http") {
+      // p = "/reverse/" + pathh;
+      p = ptth;
+    }
+    $("#backSong").attr("src", p + lyrics["data"]["backsong"]);
+    $("#vocal").attr("src", p + lyrics["data"]["vocal"]);
     if (lyrics["data"]["vsource"] === undefined) {
       $("#vd").hide();
     } else {
@@ -482,7 +487,7 @@ function unmuteLyric() {
 function pdfBtn() {
   // window.open(path+"songlist/"+song+lyrics["data"]["pdf"]);
   window.open(
-    lyrics["data"]["pdf"],
+    ptth + lyrics["data"]["pdf"],
     "_blank",
     "height=570,width=520,scrollbars=yes"
   );

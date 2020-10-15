@@ -160,7 +160,10 @@ $(document).ready(function () {
         "background-position": json.backgroundPosition,
         "background-color": json.backgroundColor,
       });
+    } else if (json.video !== "") {
+      $("#video").attr("src", pth + json.video);
     }
+
     $.getJSON(pth + json.songList, function (data) {
       setTimeout(() => {
         $("#loading").hide();

@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $("body").css({ "font-family": json.font });
     preloadResources(slides);
-    load();
+    // load();
   });
 });
 
@@ -177,7 +177,9 @@ function close() {
 function load() {
   slides1 = slides.slides;
   playing = slides.autoplay;
+  ispaused = !playing;
   if (playing == true) {
+    $("#bottombar").addClass("onplay");
     $("#ps").show();
     $("#pl").hide();
   } else {
@@ -204,7 +206,6 @@ function load() {
 }
 
 function changeSlide() {
-  // console.log(current);
   if ($(".active video").length > 0) {
     $(".active video").get(0).currentTime = 0;
   }
@@ -406,6 +407,11 @@ function next() {
     runCounter();
   }
   if (current < slides1.length - 1) {
+    if ($(".slide" + current + " iframe").length > 0) {
+      $(".slide" + current + " iframe").get(0).src = $(
+        ".slide" + current + " iframe"
+      ).get(0).src;
+    }
     pauseplay();
     current += 1;
     playing = true;
@@ -416,6 +422,11 @@ function next() {
 }
 function prev() {
   if (current > 0) {
+    if ($(".slide" + current + " iframe").length > 0) {
+      $(".slide" + current + " iframe").get(0).src = $(
+        ".slide" + current + " iframe"
+      ).get(0).src;
+    }
     pauseplay();
     playing = true;
     current -= 1;

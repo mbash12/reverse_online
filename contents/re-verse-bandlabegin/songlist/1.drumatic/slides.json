@@ -4,12 +4,19 @@
     "pdf": "../sharedcontent/lessonplans/Drumatic.pdf",
     "vsource": "",
     "video": "../sharedcontent/video/intro.mp4",
-    "autoplay": false,
+    "autoplay": true,
     "slides": [
       {
         "type": "video",
         "duration": "00:16:00",
         "content": "../sharedcontent/video/intro.mp4",
+        "voiceover": "",
+        "background-color": "blacks"
+      },
+      {
+        "type": "youtube",
+        "duration": "",
+        "content": "https://www.youtube.com/embed/p_fiwjzOAa8",
         "voiceover": "",
         "background-color": "blacks"
       },

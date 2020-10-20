@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Information For Teachers</title>
+    <title>BandLab - Let’s Get Started - Information For Teachers</title>
     <style>
+      @font-face {
+        font-family: chawp;
+        src: url(/reverse/assets/Fonts/chawp.ttf);
+      }
       body {
         font-family: Arial, Helvetica, sans-serif;
         padding: 20px;
+        background: url("Teacher Resources Heading.jpg");
+        background-size: cover;
+        background-position: top center;
+        font-family: chawp;
+        color: white;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
       }
       ul {
         list-style: none;
@@ -18,68 +30,65 @@
         margin: 0px;
       }
       li a {
-        font-size: large;
-        color: black;
+        color: white;
+        font-size: 3.5vh;
         display: inline-block;
         margin-bottom: 10px;
+        padding-bottom: 15px;
+        text-decoration: none;
+      }
+      li a:hover {
+        transform: scale(1.1) translateX(5%);
+        text-decoration: none;
+      }
+      .wrapp {
+        display: block;
+        height: calc(100vh - 250px);
+        width: 90%;
+        max-width: 1300px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 250px;
+        overflow-y: auto;
+        overflow-x: visible;
+        text-align: left;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h1>BandLab - Let’s Get Started</h1>
-    <div id="page1">
-      <h2>Part 1</h2>
-
-      <h3>Key Skills</h3>
-      Lesson 1 – Drumatic <br />
-      Lesson 2 – Looptastic <br />
-      Lesson 3 & 4 - It’s As Easy As A,B,C
-
-      <h3>Projects – Using A Visual Stimulus</h3>
-      Lesson 5 & 6 – Photo Opportunity <br />
-      Lesson 7 & 8 – It’s Showtime
-      <br /><br /><br />
-      <a href="#" id="next">Next Page</a>
-    </div>
-    <div id="page2">
-      <h2>Teacher Resources</h2>
-      <ul>
-        <li>
-          <a
-            class="toembed"
-            href="https://drive.google.com/embeddedfolderview?id=0B1iqp0kGPjWsNDg5NWFlZjEtN2IwZC00NmZiLWE3MjktYTE2ZjZjNTZiMDY2#list"
-            >Lesson Plans</a
-          >
-        </li>
-        <li>
-          <a
-            class="toembed"
-            href="https://drive.google.com/embeddedfolderview?id=0B1iqp0kGPjWsNDg5NWFlZjEtN2IwZC00NmZiLWE3MjktYTE2ZjZjNTZiMDY2#list"
-            >Lesson Resources
-          </a>
-        </li>
-        <li>
-          <a
-            class="toembed"
-            href="https://drive.google.com/embeddedfolderview?id=0B1iqp0kGPjWsNDg5NWFlZjEtN2IwZC00NmZiLWE3MjktYTE2ZjZjNTZiMDY2#list"
-            >Lesson Summary and Guidance</a
-          >
-        </li>
-        <li>
-          <a
-            class="toembed"
-            href="https://drive.google.com/embeddedfolderview?id=0B1iqp0kGPjWsNDg5NWFlZjEtN2IwZC00NmZiLWE3MjktYTE2ZjZjNTZiMDY2#list"
-            >Assessment</a
-          >
-        </li>
-        <li>
-          <a class="toembed" href="https://rhythmstix.co.uk/community/"
-            >Scheme Of Work</a
-          >
-        </li>
-      </ul>
-      <br /><br /><br />
-      <a href="#" id="prev">Previous Page</a>
+    <div class="wrapp">
+      <div id="page1">
+        <!--<h2>Teacher Resources</h2>-->
+        <ul>
+          <li>
+            <a
+              class="toembed"
+              href="https://drive.google.com/embeddedfolderview?id=1L44mJBqBPz7dLE4eg0KuMe5g9T3us8sL#list"
+              >Lesson Plans</a
+            >
+          </li>
+          <li>
+            <a
+              class="toembed"
+              href="https://drive.google.com/embeddedfolderview?id=1J40Tv3ujRKXRjcBEbgurVzVPApbuUHmI#list"
+              >Lesson Resources</a
+            >
+          </li>
+          <li>
+            <a class="toembed" href="https://rhythmstix.co.uk/community/"
+              >Rhythmstix Support Forum</a
+            >
+          </li>
+          <li>
+            <a class="toembed" href="https://help.edu.bandlab.com"
+              >BandLab For Education Support</a
+            >
+          </li>
+        </ul>
+        <br /><br /><br />
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"

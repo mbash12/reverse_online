@@ -240,6 +240,8 @@ $(document).ready(function () {
               element.name +
               "</h2></a><br>"
           );
+        } else if (element.type == "title") {
+          $("#list").append(`<h1>${element.name}</h1>`);
         }
       });
       $("#list").addClass(json.listAlign);
@@ -249,6 +251,13 @@ $(document).ready(function () {
         height: json.listHeight,
         color: json.listColor,
         "font-family": json.listFont,
+      });
+      $("#list h1").css({
+        margin: "50px 0px 10px 0px",
+        "text-align": json.listAlign,
+        color: json.listColor,
+        "font-family": json.listFont,
+        "font-size": "4vh",
       });
       $("#list a").mouseenter(() => {
         document.getElementById("click1").play();

@@ -42,10 +42,10 @@
         );
         return vars;
       }
-
-      $(document).ready(function () {
+      let doc;
+      $(document).ready(async function () {
         let iframe = decodeURIComponent(getUrlVars()["iframe"]);
-        $("#iframe").attr("src", iframe);
+        await $("#iframe").attr("src", iframe);
       });
     </script>
   </body>
